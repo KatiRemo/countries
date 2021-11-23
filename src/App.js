@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
-import CountryCard from "./components/CountryCard";
+import number from "easy-number-formatter";
+// import CountryCard from "./components/CountryCard";
 
 
 class App extends Component {
@@ -9,13 +10,12 @@ class App extends Component {
   };
 
   componentDidMount() {
-    axios.get("https://restcountries.com/v2/all?fields=name,capital,flags,languages,population,currencies").then((res) => {
+    axios
+    .get("https://restcountries.com/v2/all?fields=name,capital,flags,languages,population,currencies")
+    .then((res) => {
       this.setState({ data: res.data });
-  });
+    });
   }
-
-  // number = require('easy-number-formatter')
-  // newNum = number.formatNumber(1000)
 
   render() {
     return <div className = "countries">
@@ -33,9 +33,8 @@ class App extends Component {
                 ))}
                 </p> 
                 <p>
-                {/* Population: {numeric(country.population).format("0.0a")} */}
-                {/* Population: {country.population.number.formatNumber(1000)} */}
-                Population: {country.population}
+                Population:
+                  <span className="low">{number.formatNumber(country.population)}</span>
               </p>
                 <p>
                   Currencies: {country.currencies.map((cur, i) =>(
