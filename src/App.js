@@ -1,25 +1,62 @@
 import React, { Component } from "react";
 import axios from "axios";
 import number from "easy-number-formatter";
+import "./loading.css";
 // import CountryCard from "./components/CountryCard";
 
 
 class App extends Component {
   state = {
     data: [],
+    searchInput:"",
+    isLoading: true,
   };
 
   componentDidMount() {
     axios
     .get("https://restcountries.com/v2/all?fields=name,capital,flags,languages,population,currencies")
     .then((res) => {
-      this.setState({ data: res.data });
+      this.setState({ data: res.data, isLoading: false });
     });
   }
 
+  searchHandler = (event) => {
+    this.setState({
+      searchInput: event.target.value,
+    });
+    // console.log(this.state.searchInput)
+  };
+
   render() {
+    if (!this.state.isLoading) {
+      return (
+        <div>
+          <div class="lds-ripple">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+          <p>Wait, working on it!</p>
+        </div>
+      );
+    }
+
+    // if(!this.state.isLoading) {
+    //   return (<div>
+    //     <p>Wait, working on it!</p>
+    //   </div> 
+    //   );
+    // }
+
     return <div className = "countries">
-      {this.state.data.map((country) => (
+      <input type="text" name="search" onChange={this.searchHandler}/>
+      {this.state.data.filter((country) => {
+        return country.name
+        .toLowerCase()
+        .includes(this.state.searchInput.toLowerCase());
+      })
+      .map((country) => (
         <div className = "country" key={country.name}>
           <header>
             <h2>{country.name}</h2> 

@@ -13,26 +13,33 @@
 }
 
 .country {
-  box-shadow: 0 0 5px #333;
+  box-shadow: 0 0 5px #836953;
   border: none;
   width: auto;
   height: auto;
   margin: 10px;
   position: relative;
   font-family: "Lato", sans-serif;
-  color: #333;
+  color: #836953;
 }
 
 .country p {
   padding: 5px;
 }
 
+.isLoading {
+  font-family: "Lato", sans-serif;
+  color: #836953;
+  font-size: 2rem;
+  text-align: center;
+}
+
 header {
-  background-color: #dcdcdc;
+  background-color: #faf0e6;
   width: 100%;
   padding: 5px;
   margin: 0;
-  color: #333;
+  color: #836953;
 }
 
 header h2 {
@@ -46,4 +53,25 @@ header h2 {
   position: absolute;
   top: 3px;
   right: 3px;
+}
+
+.searchInput {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+input {
+  background-color: #faf0e6;
+  border: none;
+  box-shadow: 0 0 5px #836953;
+  width: 250px;
+  margin: 1rem;
+  height: 50px;
+  width: 300px;
+  font-family: "Lato", sans-serif;
+  color: #836953;
+  font-size: 1.2rem;
+  padding: 1rem;
 }
