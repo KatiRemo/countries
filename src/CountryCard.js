@@ -1,5 +1,6 @@
 import React from 'react';
 import number from "easy-number-formatter";
+import {Link} from "react-router-dom";
 
 const CountryCard = ({
   name,
@@ -10,6 +11,7 @@ const CountryCard = ({
   flags,
 }) => {
   return (
+    <Link to={capital}>
     <div className="country" key={name}>
       <h2> {name}</h2> <h3>{capital}</h3>
       <img src={flags.png} alt={name} />
@@ -34,6 +36,7 @@ const CountryCard = ({
         </p>
       </div>
     </div>
+    </Link>
   );
 };
 

@@ -28,7 +28,9 @@ body {
   color: #836953;
 }
 
-.country p {
+.country p,
+.country h2,
+.country h3 {
   padding: 5px;
 }
 
@@ -67,6 +69,7 @@ header h3 {
 #searchField {
   display: grid;
   width: 100%;
+  grid-gap: 1rem;
   /* display: flex;
   justify-content: center;
   align-items: center;
