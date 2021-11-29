@@ -4,7 +4,7 @@ class CountrySingle extends Component {
     render() {
         return (
             <div>
-                
+                Single page for one country
             </div>
         );
     }

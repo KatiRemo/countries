@@ -1,18 +1,13 @@
 import React, { Component } from "react";
-import axios from "axios";
-import number from "easy-number-formatter";
-import "./loading.css";
-import "./index.css";
-import "./components/CountryList";
-// import CountryCard from "./components/CountryCard";
-import Home from "./components/Home";
+import CountryList from "./CountryList"
+import Home from "./Home";
 
 const App = () => {
   return (
-      <Router>
+      <div>
           <Home />
-          <Footer />
-      </Router>
+          <CountryList />
+      </div>    
   );
 };
 

@@ -40,9 +40,14 @@ header {
   color: #836953;
 }
 
+h1 {
+  color: #836953;
+  font-family: "Lato", sans-serif;
+  padding: 10px;
+}
+
 header h2 {
   font-size: 1.2rem;
-  padding-bottom: 5px;
 }
 
 header h3 {
