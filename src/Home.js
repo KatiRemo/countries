@@ -6,12 +6,12 @@ function Home(props) {
         <div>
             <div className="home">
             <main>
-            <h1>Welcome to the Country App</h1>
-            <p>Have a great time learning about different countries</p>
+            <h1>Country App</h1>
+            <div className="mapImage">
+            <p>I'm so happy you have found your way to my Country App, I hope you enjoy your stay!</p>
+            <p>At current times when traveling is not as easy, it is fun to gain some new knowledge about other countries.</p>
+            </div>
             </main>
-            <div className="herobanner">
-            <img src="./world-map-brown.png" />
-        </div>
             </div>
             <Footer />
         </div>

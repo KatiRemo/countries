@@ -28,6 +28,12 @@ p {
   font-family: "Lato", sans-serif;
 }
 
+.mapImage {
+  background: url("/src/assets/world-map-brown.png") no-repeat center;
+  height: 600px;
+  width: auto;
+}
+
 .countries {
   display: grid;
   grid-gap: 1rem;
@@ -47,7 +53,7 @@ p {
 }
 
 .country:hover {
-  box-shadow: 0 0 20px #644117;
+  box-shadow: 0 0 10px #644117;
   opacity: 100%;
 }
 
@@ -70,6 +76,7 @@ header {
 ul {
   display: flex;
   list-style-type: none;
+  padding-left: 20px;
 }
 
 li a {
@@ -77,6 +84,10 @@ li a {
   padding: 20px;
   display: inline-block;
   height: 50px;
+}
+
+li a:hover {
+  transform: scale(1.1);
 }
 
 .home {
@@ -112,6 +123,10 @@ input {
   color: #644117;
   font-size: 1.2rem;
   padding: 1rem;
+}
+
+input:hover {
+  box-shadow: 0 0 10px #644117;
 }
 
 .capitalData {
@@ -191,6 +206,13 @@ footer p {
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 1rem;
   }
+
+  footer {
+    position: fixed;
+    left: 0;
+    bottom: 25px;
+    right: 0;
+  }
 }
 
 @media (min-width: 767.98px) {
@@ -199,6 +221,13 @@ footer p {
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 1rem;
   }
+
+  footer {
+    position: fixed;
+    left: 0;
+    bottom: 25px;
+    right: 0;
+  }
 }
 
 @media (min-width: 1199.98px) {
@@ -206,5 +235,12 @@ footer p {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 1rem;
+  }
+
+  footer {
+    position: fixed;
+    left: 0;
+    bottom: 25px;
+    right: 0;
   }
 }
