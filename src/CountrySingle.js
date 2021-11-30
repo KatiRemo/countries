@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './loading.css';
 import './index.css';
+import Footer from './Footer';
+import number from "easy-number-formatter";
 
 function getCountry(capital) {
     return axios.get(`https://restcountries.com/v2/capital/${capital}`);
@@ -60,9 +62,9 @@ class CountrySingle extends Component {
                     src={`http://openweathermap.org/img/wn/${this.state.weather.weather[0].icon}@2x.png`} 
                     alt={this.state.weather.weather[0].description}
                     />
-                    <p>Right now the temperature in the capital city {" "} {this.state.country.capital} is {this.state.weather.main.temp} °C  
-                    .</p>
-                    <p>The population of {this.state.country.name} is {this.state.country.population}.</p>
+                    <p>Temperature in the capital city {" "} {this.state.country.capital} is {this.state.weather.main.temp} °C at the moment 
+                    </p>
+                    <p>The population of {this.state.country.name} is <span className="low">{number.formatNumber(this.state.country.population)}</span></p>
                     <p>The language(s) spoken in {this.state.country.name} are: {this.state.country.languages.map((lang, i) => (
                         <span key={i}> {lang.name} </span>
                     ))}
@@ -74,6 +76,7 @@ class CountrySingle extends Component {
                         The timezone of {this.state.country.name} is {this.state.country.timezones}
                     </p>
                   </div>
+                  <Footer />
                 </div>
             );
         }

@@ -48,6 +48,7 @@ class CountryList extends Component {
           <input
             type="text"
             name="search"
+            placeholder="Search..."
             onChange={this.searchHandler.bind(this)}
           />
           <div className="countries">
