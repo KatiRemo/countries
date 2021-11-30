@@ -32,7 +32,7 @@ class CountryList extends Component {
     if (this.state.isLoading) {
       return (
         <div>
-          <div class="lds-ring">
+          <div className="lds-ripple">
             <div></div>
             <div></div>
             <div></div>
@@ -44,12 +44,13 @@ class CountryList extends Component {
 
     if (!this.state.isLoading) {
       return (
-        <div className="countries">
+        <div>
           <input
             type="text"
             name="search"
             onChange={this.searchHandler.bind(this)}
           />
+          <div className="countries">
           {this.state.data
             .filter((c) => {
               return c.name
@@ -59,6 +60,7 @@ class CountryList extends Component {
             .map((country) => (
               <CountryCard {...country} key={country.name} />
             ))}
+        </div>
         </div>
       );
     }

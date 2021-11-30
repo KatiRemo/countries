@@ -6,15 +6,15 @@ import {
   Link, 
   Routes, 
   Route, 
-  useParams 
+  useParams,
 } from "react-router-dom";
-import CountryCard from "./CountryCard";
-import CountrySingle from "./CountrySingle"
+import CountrySingle from "./CountrySingle";
+import About from "./About";
 
 const RouteWrapper = (props) => {
   const params = useParams();
   return <CountrySingle params={params} {...props} />
-}
+};
 
 const App = () => {
   return (
@@ -27,15 +27,21 @@ const App = () => {
           <li>
             <Link to="/countries">Countries</Link>
           </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
         </ul>
         </nav>
 
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route index element={<Home />} />
+          <Route path="/about" element={<About />} />
           <Route path="/countries" element={<CountryList />} />
           <Route path="/countries/:name" element={<RouteWrapper />} />
         </Routes>
       </BrowserRouter>    
+
+
   );
 };
 
