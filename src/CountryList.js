@@ -56,8 +56,8 @@ class CountryList extends Component {
                 .toLowerCase()
                 .includes(this.state.searchInput.toLowerCase());
             })
-            .map((something) => (
-              <CountryCard {...something} key={something.name} />
+            .map((country) => (
+              <CountryCard {...country} key={country.name} />
             ))}
         </div>
       );

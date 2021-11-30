@@ -1,9 +1,20 @@
 import React from "react";
 import CountryList from "./CountryList"
 import Home from "./Home";
-import { BrowserRouter, Link, Routes, Route } from "react-router-dom";
+import { 
+  BrowserRouter, 
+  Link, 
+  Routes, 
+  Route, 
+  useParams 
+} from "react-router-dom";
 import CountryCard from "./CountryCard";
 import CountrySingle from "./CountrySingle"
+
+const RouteWrapper = (props) => {
+  const params = useParams();
+  return <CountrySingle params={params} {...props} />
+}
 
 const App = () => {
   return (
@@ -22,7 +33,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/countries" element={<CountryList />} />
-          <Route path="name" element={<CountrySingle />} />
+          <Route path="/countries/:name" element={<RouteWrapper />} />
         </Routes>
       </BrowserRouter>    
   );

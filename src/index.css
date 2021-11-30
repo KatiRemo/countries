@@ -24,14 +24,21 @@ body {
   height: auto;
   margin: 10px;
   position: relative;
-  font-family: "Lato", sans-serif;
   color: #836953;
+  font-family: "Lato", sans-serif;
 }
 
 .country p,
 .country h2,
 .country h3 {
   padding: 5px;
+  text-decoration: none;
+}
+
+a {
+  color: #836953;
+  padding: 5px;
+  font-family: "Lato", sans-serif;
 }
 
 header {
