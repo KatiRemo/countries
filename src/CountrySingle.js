@@ -18,8 +18,6 @@ class CountrySingle extends Component {
     state = {
         country: {},
         weather: {},
-        currency: {},
-        population: {},
         isLoading: true,
     };
 
@@ -62,18 +60,16 @@ class CountrySingle extends Component {
                     src={`http://openweathermap.org/img/wn/${this.state.weather.weather[0].icon}@2x.png`} 
                     alt={this.state.weather.weather[0].description}
                     />
-                    <p>Temperature in the capital city {" "} {this.state.country.capital} is {this.state.weather.main.temp} °C at the moment 
-                    </p>
-                    <p>The population of {this.state.country.name} is <span className="low">{number.formatNumber(this.state.country.population)}</span></p>
-                    <p>The language(s) spoken in {this.state.country.name} are: {this.state.country.languages.map((lang, i) => (
-                        <span key={i}> {lang.name} </span>
+                    <p>Capital city: <strong>{this.state.country.capital}</strong></p> <p>Current temperature: {" "} <strong>{this.state.weather.main.temp}</strong> °C</p>
+                    <p>Population: <span className="low"><strong>{number.formatNumber(this.state.country.population)}</strong></span></p>
+                    <p>The official language(s): {this.state.country.languages.map((lang, i) => (
+                        <span key={i}><strong> {lang.name} </strong></span>
                     ))}
                     </p>
+                    <p>Continent: <strong> {this.state.country.region}</strong></p>
                     <p>
-                        {this.state.country.name} is situated in the continent of {this.state.country.region}
-                    </p>
-                    <p>
-                        The timezone of {this.state.country.name} is {this.state.country.timezones}
+                        Timezones: {this.state.country.timezones.map((tz, i) => (
+                        <span key={i}> <strong>{tz} </strong> </span>))}
                     </p>
                   </div>
                   <Footer />

@@ -19,20 +19,20 @@ const CountryCard = ({
         <p>
           Language(s):
           {languages.map((lang, i) => (
-            <span key={i}> {lang.name} </span>
+            <span key={i}><strong> {lang.name} </strong></span>
           ))}
         </p>
         <p>
           Currencies:
           {currencies.map((mon, i) => (
             <span key={i}>
-              {mon.name} - {mon.symbol}
+              <strong>{mon.name} - {mon.symbol}</strong>
             </span>
           ))}
         </p>
         <p>
           Population:
-          <span className="low">{number.formatNumber(population)}</span>
+          <span className="low"><strong>{number.formatNumber(population)}</strong></span>
         </p>
       </div>
     </div>

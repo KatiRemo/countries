@@ -43,8 +43,8 @@ p {
   box-shadow: 0 0 5px #644117;
   border: none;
   border-radius: 5px;
-  width: auto;
-  height: auto;
+  width: min-content auto;
+  height: min-content auto;
   margin: 10px;
   position: relative;
   color: #3c1414;
