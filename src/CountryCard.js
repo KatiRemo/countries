@@ -11,20 +11,21 @@ const CountryCard = ({
   flags,
 }) => {
   return (
-    <Link to={capital}>
+    <Link to={{ pathname: `${capital}` }}>
     <div className="country" key={name}>
       <h2>{name}</h2> <h3>{capital}</h3>
       <img src={flags.png} alt={name} />
       <div className="cardContent">
         <p>
           Language(s):
-          {languages.map((lang, i) => (
+          {languages?.map((lang, i) => (
             <span key={i}><strong> {lang.name} </strong></span>
           ))}
         </p>
+
         <p>
           Currencies:
-          {currencies.map((mon, i) => (
+          {currencies?.map((mon, i) => (
             <span key={i}>
               <strong>{mon.name} - {mon.symbol}</strong>
             </span>
